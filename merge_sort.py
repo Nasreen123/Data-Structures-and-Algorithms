@@ -59,11 +59,13 @@ def merge_sort(lists):
     else:
         return merge_sort(lists) ###THIS RETURN WAS MISSING! (called func w/o returning result)
 
-lists = [
-[3, 1, 5, 2],
-[7, 1, 3, 5, 2],
-[6, 4, 1, 3, 9],
-[11, 6, 4, 1, 48, 113, 3, 9, 17]
-]
-for each_list in lists:
-    print('\n TEST: ', each_list, merge_sort([each_list]), '\n')
+"""if __name__ == "__main__":
+    lists = [
+    [3, 1, 5, 2],
+    [7, 1, 3, 5, 2],
+    [6, 4, 1, 3, 9],
+    [11, 6, 4, 1, 48, 113, 3, 9, 17]
+    ]
+    for each_list in lists:
+        print('\n TEST: ', each_list, merge_sort([each_list]), '\n')
+"""
