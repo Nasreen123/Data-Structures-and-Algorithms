@@ -1,4 +1,5 @@
-import string_to_graph, djikstra
+import string_to_graph
+import redo_djikstra as djikstra
 
 
 def print_ht(ht, name):
@@ -13,14 +14,17 @@ inputs = [
  "start B 5 C 2 | B D 4 E 2 | C B 8 E 7 | D fin 3 E 6 | E fin 1 | fin"
 ]
 
-for input_string in inputs:
+routes = [
+ ['start', 'B', 'A', 'fin'],
+ ['start', 'B', 'E', 'fin']
+]
+
+for input_string, answer_route in zip(inputs, routes):
     graph, start, end = string_to_graph.make_graph(input_string)
     print_ht(graph, 'graph')
-    costs, parents = djikstra.djikstra(graph, start, end)
-
-    print_ht(costs, 'costs')
-    print_ht(parents, 'parents')
-
+    costs, parents, route = djikstra.djikstra(graph, start, end)
+    print(route)
+    assert answer_route == route
 
 
 
